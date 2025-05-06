@@ -59,7 +59,7 @@ n5=number(65)
 print(number.even)
 print(number.odd)'''
 #class methods
-class abc:
+'''class abc:
     def __init__(self,name,var):
         self.name=name
         self.var=var
@@ -79,5 +79,24 @@ if val==0:
 elif val==-1:
     print("1st value is less than second")
 else:
-    print("2nd value is less than first")
-    
+    print("2nd value is less than first")'''
+
+#Advanced control methods
+'''
+1.__call__()--instance can be directly called
+2.__it__(),__le__(),__gt__(),__ge__(),__eq__(),__ne__()
+3.__hash__()--decide obj/set/dict
+4.__iter__()
+5.__getitem__(),__setitem__()
+'''
+class numbers:
+    def __init__(self,myself):
+        self.mylist=mylist
+    def __getitem__(self,index):
+        return self.mylist[index]
+    def __setitem__(self,index,val):
+        self.mylist[index]=val
+numlist=numbers([1,2,3,4,5,6,7,8,9])
+print(numlist)
+numlist[3]=10
+print(numlist.mylist)
