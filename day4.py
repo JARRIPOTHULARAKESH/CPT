@@ -63,7 +63,7 @@ head.name()
 head.qualification()
 head.exp()'''
 
-class sq:
+'''class sq:
     def __init__(self,n):
         self.n=n
         print(self.n**2)
@@ -76,7 +76,34 @@ class derived(sq,cube):
         sq.__init__(self,n)
         cube.__init__(self,n)
 n=int(input("value:"))
-b=derived(n)
+b=derived(n)'''
 
+#abstract class
+class fruit:
+    def taste(self):
+        raise NotImplementedError()
+    def vitamin(self):
+        raise NotImplementedError()
+    def color(self):
+        raise NotImplementedError
+class mango(fruit):
+    def taste(self):
+        return "Sweet"
+    def vitamin(self):
+        return "A"
+    def color(self):
+        return "yellow"
+
+class orange(fruit):
+    def taste(self):
+        return "Sweet&sour"
+    def vitamin(self):
+        return "C"
+    def color(self):
+        return "orange"
+Alphanso=mango()
+print(Alphanso.taste(),Alphanso.vitamin(),Alphanso.color())
+org=orange()
+print(org.taste(),org.vitamin(),org.color())
 
     
