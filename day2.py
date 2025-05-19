@@ -90,7 +90,7 @@ else:
 5.__getitem__(),__setitem__()
 '''
 class numbers:
-    def __init__(self,myself):
+    def __init__(self,mylist):
         self.mylist=mylist
     def __getitem__(self,index):
         return self.mylist[index]

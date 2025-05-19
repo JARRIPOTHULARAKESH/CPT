@@ -1,0 +1,21 @@
+'''errors and exceptions types of errors /exceptions
+try-blocks except finally rasing exception built in function'''
+#handling zero division error
+num=int(input("enter the numerator:"))
+deno=int(input("enter the denomenator:"))
+try:
+    quo=num/deno
+    print("Quotient:",quo)
+except ZeroDivisionError:
+    print("denominator cannnot be zero")
+
+
+#multiple exception handling
+try:
+    num=int(input("enter a number:"))
+    print(num**2)
+except (KeyboardInterrupt):
+    print("You have to enter a number.... progrm")
+except (ValueError):
+    print("please check before you enter... program")
+print("Bye")
