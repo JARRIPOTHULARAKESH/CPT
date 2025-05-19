@@ -69,7 +69,7 @@ div(a,b)'''
 
 #exception-base class/all exceptions SystemExit-sys.exot() StandardError -except sys.exit()/StopIteration
 
-class myError(Exception):
+'''class myError(Exception):
     def __init__(self,value):
         self.value=value
     def __str__(self):
@@ -77,4 +77,81 @@ class myError(Exception):
 try:
     raise myError(99)
 except myError as e:
-    print("return string is :",e.value)
+    print("return string is :",e.value)'''
+
+'''try:
+    print('raise eception')
+    raise ValueError
+finally:
+    print("performong clean vy finally")'''
+
+
+#intractive calc model 
+class Calculator:
+    def __init__(self):
+        self.one=0
+        self.two=0
+    def input_numbers(self):
+        try:
+            self.one=float(input("enter 1st number:"))
+            self.two=float(input("enter 2st number:"))
+        except ValueError:
+            print("invalid input....please enter numbers")
+            self.input_numbers()
+    def add(self):
+        return self.one+self.two
+    def subtract(self):
+        return self.one-self.two
+    def multiply(self):
+        return self.one*self.two
+    def divide(self):
+        return self.one/self.two
+    def mod(self):
+        return self.one%self.two
+    def expo(self):
+        return self.one**self.two
+    def floor_divide(self):
+        return self.one//self.two
+def display_menu():
+    print("\n ==== Calculator Menu ==== \n")
+    print("1.ADDITION")
+    print("2.SUB")
+    print("3.MUL")
+    print("4.DIV")
+    print("5.MOD")
+    print("6.EXPO")
+    print("7.floor div")
+    print("8.exit")
+    
+def main():
+    calc=Calculator()
+    while True:
+        display_menu()
+        choice=input("select an operator(1-8):")
+        if choice=='8':
+            print("exit")
+            break
+        calc.input_numbers()
+        try:
+            if choice=='1':
+                print("result:",calc.add())
+            elif choice=='2':
+                print("result:",calc.subtract())
+            elif choice=='3':
+                print("result:",calc.multiply())
+            elif choice=='4':
+                print("result:",calc.divide())
+            elif choice=='5':
+                print("result:",calc.mod())
+            elif choice=='6':
+                print("result:",calc.expo())
+            elif choice=='7':
+                print("result:",calc.floor_divide())
+            else:
+                print("invalid choice")
+        except ZeroDivisionError as e:
+            print("error:",e)
+        except Exception as e:
+            print("unexcepted error:",e)
+main()
+            
