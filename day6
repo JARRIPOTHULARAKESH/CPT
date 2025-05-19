@@ -46,7 +46,7 @@ except:
 
 
 #instance using in exceptons 
-try:
+'''try:
     raise Exception('hi','students')
 except Exception as errorObj:
     print(type(errorObj))
@@ -54,5 +54,16 @@ except Exception as errorObj:
     print(errorObj)
     x,y=errorObj.args
     print("Assigned1:",x)
-    print("Assigned2:",y)
+    print("Assigned2:",y)'''
+
+def div(n,d):
+    try:
+        q=n/d
+        print(q)
+    except ZeroDivisionError:
+        print("non-processed")
+a=int(input("enter numerator:"))
+b=int(input("enter denomenator:"))
+div(a,b)
+
 
