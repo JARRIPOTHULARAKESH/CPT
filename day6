@@ -56,7 +56,7 @@ except Exception as errorObj:
     print("Assigned1:",x)
     print("Assigned2:",y)'''
 
-def div(n,d):
+'''def div(n,d):
     try:
         q=n/d
         print(q)
@@ -64,6 +64,17 @@ def div(n,d):
         print("non-processed")
 a=int(input("enter numerator:"))
 b=int(input("enter denomenator:"))
-div(a,b)
+div(a,b)'''
 
 
+#exception-base class/all exceptions SystemExit-sys.exot() StandardError -except sys.exit()/StopIteration
+
+class myError(Exception):
+    def __init__(self,value):
+        self.value=value
+    def __str__(self):
+        return repr(self.value)
+try:
+    raise myError(99)
+except myError as e:
+    print("return string is :",e.value)
