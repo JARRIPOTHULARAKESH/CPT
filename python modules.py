@@ -13,3 +13,24 @@ print("Todays date:",date.today())
 
 formatted=now.strftime("%d-%m-%Y %H:%M:%S")#string format time
 print("Formatted datetime:",formatted)
+
+#parsed datetime-converting to one datatype to another datatype
+
+date_str="24-12-2000 14:55:00"
+parsed=datetime.strptime(date_str,"%d-%m-%Y %H:%M:%S")#string parsed time
+print("Parsed data:",parsed)
+
+#timedelta
+
+tommorow=now+timedelta(days=1)
+print("Tommorow:",tommorow)
+yesterday=now-timedelta(days=1)
+print("yesteray:",yesterday)
+ftime=now+timedelta(hours=3,minutes=35)
+print("Ftime:",ftime)
+
+
+
+now=datetime.now()
+format_12hr=now.strftime("%d/%m/%Y %I:%M:%S %p")
+print(format_12hr)
