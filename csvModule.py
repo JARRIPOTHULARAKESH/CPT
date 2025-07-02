@@ -1,5 +1,5 @@
 import csv
-with open("people.csv",'w', newline="") as file:
+with open("people.csv","w", newline="") as file:
     writer=csv.writer(file)
     writer.writerow(["name","age"])
     for _ in range(2):
