@@ -5,7 +5,7 @@ print(random.randint(1,100))'''
 
 #datetime
 
-from datetime import datetime,date,timedelta
+'''from datetime import datetime,date,timedelta
 now=datetime.now()
 print("Current datetime:",now)
 print("Todays date:",date.today())
@@ -32,5 +32,15 @@ print("Ftime:",ftime)
 
 
 now=datetime.now()
-format_12hr=now.strftime("%d/%m/%Y %I:%M:%S %p")
-print(format_12hr)
+format_12hr=now.strftime("%d/%m/%Y %I:%M:%S %p")#%P : WORKS FOR BOTH AM AND PM %I=0-12
+print(format_12hr)'''
+
+
+#JSON MODULE
+
+import json
+name=input("enter your name:")
+age=int(input("enter your age:"))
+data={"name":name,"age":age}
+stringify_json=json.dumps(data)
+print("Serialised data of JSON",stringify_json)
