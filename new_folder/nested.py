@@ -11,3 +11,10 @@ print(o)  # This will print the result of the lambda expression)
 
 o=(lambda a: lambda b: lambda c: lambda d:(a+b)*c*d)(2)(3)(4)(5)
 print(o)  # This will print the result of the nested lambda expression
+
+
+num=int(input("a:"))
+n=int(input("x:"))
+oper=lambda a:lambda x:(x+a)**2
+numsq=oper(num) #5
+print(numsq(n))  # This will print the square of (n + num)
