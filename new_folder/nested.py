@@ -19,10 +19,18 @@ oper=lambda a:lambda x:(x+a)**2
 numsq=oper(num) #5
 print(numsq(n))  # This will print the square of (n + num)'''
 
-try:
+'''try:
     o=(lambda a: lambda b: lambda c,d:(a-b)/(c-d)(10)(4)(8,8))
     print(o)
 except ZeroDivisionError:
     print("Division by zero is not allowed.")
 except typeError:
-    print("Invalid input type. Please ensure all inputs are numbers.")
+    print("Invalid input type. Please ensure all inputs are numbers.")'''
+
+numbers=lambda x: lambda a:a*2 if a>x else a*3
+above_5=numbers(5)
+num=[4, 6, 3, 8]
+
+o=list(map(above_5, num))
+print(o)  # This will print the modified list based on the lambda function
+  
