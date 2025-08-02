@@ -28,4 +28,4 @@ elif args.opt=="mul":
     result=args.x*args.y
 elif args.opt=="div":
     result=args.x/args.y
-print("Result is:",result)
+print("Result is:",result) 
