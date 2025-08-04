@@ -19,3 +19,4 @@ try:
     print("Data Type:", series.dtype)
 except ValueError as e:
     print(e)
+ 
