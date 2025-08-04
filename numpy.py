@@ -30,4 +30,7 @@ arr=np.array([True,True,False,True])
 print(arr.astype(np.int32))
 arr=np.array([1.5,2.9,9.8])
 print(arr.astype(np.complex128))
-
+arr=np.array([1,2,3,4])
+print(arr.astype(np.int8))
+arr=np.array([20250101,19990101])
+print(arr.astype('datetime64[D]'))
