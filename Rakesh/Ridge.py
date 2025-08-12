@@ -32,8 +32,8 @@ fig = plt.figure(figsize=(10, 8))
 ax = fig.add_subplot(111, projection='3d')
 
 
-ax.scatter(x1_test, x2_test, y_test, color='blue', label='Actual', alpha=0.8)
-ax.scatter(x1_test, x2_test, y_pred, color='red', label='Predicted', alpha=0.8)
+# ax.scatter(x1_test, x2_test, y_test, color='blue', label='Actual', alpha=0.8)
+# ax.scatter(x1_test, x2_test, y_pred, color='red', label='Predicted', alpha=0.8)
 
 
 x1_range = np.linspace(x1_test.min(), x1_test.max(), 100)
@@ -53,13 +53,18 @@ y_grid = ridge.predict(x_grid).reshape(x1_grid.shape)
 
 ax.plot_surface(x1_grid, x2_grid, y_grid, color='yellow', alpha=0.5)
 
+sc_actual = ax.scatter([],[],[], color='blue', label='Actual', alpha=0.8)
+sc_predicted = ax.scatter([],[],[], color='red', label='Predicted', alpha=0.8)
+
 ax.set_xlabel('Feature 1')
 ax.set_ylabel('Feature 2')
 ax.set_zlabel('Target Variable')
 ax.set_title('Ridge Regression 3D Visualization')
 plt.legend()
-
-def rotate(angle):
-    ax.view_init(azim=angle)
-ani = FuncAnimation(fig, rotate, frames=np.arange(0, 360, 2), interval=50)
+def update(frame):
+    if frame < len(x1_test):
+        sc_actual._offsets3d = (x1_test[:frame+1], x2_test[:frame+1], y_test[:frame+1])
+        sc_predicted._offsets3d = (x1_test[:frame+1], x2_test[:frame+1], y_pred[:frame+1])
+    return sc_actual, sc_predicted
+ani= FuncAnimation(fig, update, frames=len(x1_test), interval=200, blit=True)
 plt.show()
